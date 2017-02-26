@@ -6,9 +6,10 @@ U8GLIB_SSD1306_128X64 u8g(13, 11, 10, 9, 8);
 int sensorValue;
 
 void draw(){
+  u8g.setContrast(0);
   u8g.setFont(u8g_font_unifont);
   u8g.setPrintPos(0,10);
-  u8g.print((String) "Hum,%    Temp,*C");
+  u8g.print((String) "Hmdt,%   Temp,*C");
   u8g.setFont(u8g_font_fur30);
   u8g.setPrintPos(0,55);
   u8g.print((String) round(sensor.hum) + "   " + round(sensor.tem));
